@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acceso</title>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        input {
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            padding: 12px;
+            margin: 10px;
+        }
+
+        button {
+            background-color: white;
+            color: black;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <h1>Introduce el código</h1>
+
+        <form id="formulario">
+            <input
+                type="password"
+                id="codigo"
+                placeholder="Código de acceso"
+                required
+            >
+
+            <br>
+
+            <button type="submit">Entrar</button>
+        </form>
+
+        <p id="error"></p>
+    </main>
+
+    <script>
+        const codigoCorrecto = "91112";
+
+        document.getElementById("formulario").addEventListener(
+            "submit",
+            function(event) {
+                event.preventDefault();
+
+                const codigoIntroducido =
+                    document.getElementById("codigo").value;
+
+                if (codigoIntroducido === codigoCorrecto) {
+                    window.location.href = "file:///C:/Users/bermu/Pictures/web%203/Untitled-1.html";
+                } else {
+                    document.getElementById("error").textContent =
+                        "Código incorrecto.";
+                }
+            }
+        );
+    </script>
+
+</body>
+</html>
